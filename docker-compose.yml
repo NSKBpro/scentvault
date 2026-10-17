@@ -1,0 +1,95 @@
+# ScentVault — local infrastructure.
+#
+#   docker compose up -d                      # Postgres (pgvector) + Redis   ← what you need for dev
+#   docker compose --profile app up -d        # + API and worker in containers
+#   docker compose --profile ollama up -d     # + local LLM (then: docker exec scentvault_ollama ollama pull llama3.2)
+#
+# Credentials come from .env (copy .env.example). The project/volume names match the
+# pre-2.0 setup, so your existing database volume is reused.
+name: scentvault
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: scentvault_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-scentvault}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-scentvault}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-scentvault} -d ${POSTGRES_DB:-scentvault}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: scentvault_redis
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  api:
+    profiles: ["app"]
+    build:
+      context: ./apps/api
+      args:
+        WITH_ML: ${WITH_ML:-1}
+    container_name: scentvault_api
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-scentvault}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-scentvault}
+      REDIS_URL: redis://redis:6379/0
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL_DOCKER:-http://host.docker.internal:11434}
+    command: sh -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8004"
+    ports:
+      - "${API_PORT:-8004}:8004"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      db: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    restart: unless-stopped
+
+  worker:
+    profiles: ["app"]
+    build:
+      context: ./apps/api
+      args:
+        WITH_ML: ${WITH_ML:-1}
+    container_name: scentvault_worker
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-scentvault}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-scentvault}
+      REDIS_URL: redis://redis:6379/0
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL_DOCKER:-http://host.docker.internal:11434}
+    command: arq app.workers.arq_worker.WorkerSettings
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      db: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    restart: unless-stopped
+
+  ollama:
+    profiles: ["ollama"]
+    image: ollama/ollama:latest
+    container_name: scentvault_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+
+volumes:
+  postgres_data:
+  ollama_data:

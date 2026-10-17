@@ -1,0 +1,8 @@
+{
+  "name": "@scentvault/api-types",
+  "version": "2.0.0",
+  "private": true,
+  "description": "TypeScript types generated from the ScentVault API OpenAPI schema (apps/api/scripts/gen_types.py)",
+  "types": "src/index.ts",
+  "main": "src/index.ts"
+}

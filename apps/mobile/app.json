@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "ScentVault",
+    "slug": "scentvault",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0D0D1A",
+    "splash": {
+      "backgroundColor": "#0D0D1A",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.scentvault.app",
+      "backgroundColor": "#0D0D1A"
+    },
+    "android": {
+      "package": "com.scentvault.app",
+      "backgroundColor": "#0D0D1A",
+      "adaptiveIcon": {
+        "backgroundColor": "#0D0D1A"
+      }
+    },
+    "plugins": [
+      "expo-asset",
+      "expo-sqlite"
+    ]
+  }
+}

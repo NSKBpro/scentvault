@@ -1,0 +1,96 @@
+# Column dump of the pre-2.0 database (Mihajlo's local Docker DB, 2026-10-17).
+# Used to build the replica that tests scripts/migrate_legacy.py.
+accords.id integer
+accords.name character varying
+brands.id integer
+brands.name character varying
+brands.country character varying
+brands.website_url character varying
+brands.logo_url character varying
+brands.description text
+brands.created_at timestamp without time zone
+families.id integer
+families.name character varying
+families.description text
+fragrance_accords.fragrance_id integer
+fragrance_accords.accord_id integer
+fragrance_embeddings.fragrance_id integer
+fragrance_embeddings.embedding vector
+fragrance_embeddings.text_input text
+fragrance_embeddings.model_version character varying
+fragrance_embeddings.generated_at timestamp with time zone
+fragrance_families.fragrance_id integer
+fragrance_families.family_id integer
+fragrance_families_map.fragrance_id integer
+fragrance_families_map.family_id integer
+fragrance_notes.fragrance_id integer
+fragrance_notes.note_id integer
+fragrance_notes.position character varying
+fragrance_notes.prominence integer
+fragrance_occasions.fragrance_id integer
+fragrance_occasions.occasion_id integer
+fragrance_prices.id integer
+fragrance_prices.fragrance_id integer
+fragrance_prices.size_ml integer
+fragrance_prices.price_usd double precision
+fragrances.id integer
+fragrances.brand_id integer
+fragrances.name character varying
+fragrances.concentration character varying
+fragrances.gender character varying
+fragrances.release_year integer
+fragrances.description text
+fragrances.longevity_hours numeric
+fragrances.sillage character varying
+fragrances.season_spring boolean
+fragrances.season_summer boolean
+fragrances.season_fall boolean
+fragrances.season_winter boolean
+fragrances.occasion_tags ARRAY
+fragrances.available_sizes_ml ARRAY
+fragrances.image_url character varying
+fragrances.discontinued boolean
+fragrances.created_at timestamp without time zone
+fragrances.has_embedding boolean
+notes.id integer
+notes.name character varying
+notes.category character varying
+notes.description text
+occasions.id integer
+occasions.name character varying
+price_entries.id integer
+price_entries.fragrance_id integer
+price_entries.retailer_id integer
+price_entries.price_usd numeric
+price_entries.spotted_at timestamp without time zone
+price_logs.id integer
+price_logs.fragrance_id integer
+price_logs.retailer_id integer
+price_logs.size_ml integer
+price_logs.price_usd double precision
+price_logs.product_url character varying
+price_logs.is_sale boolean
+price_logs.logged_at timestamp with time zone
+retailers.id integer
+retailers.name character varying
+retailers.website_url character varying
+retailers.country character varying
+retailers.created_at timestamp with time zone
+user_collection.id integer
+user_collection.user_id uuid
+user_collection.fragrance_id integer
+user_collection.size_ml integer
+user_collection.purchase_price numeric
+user_collection.rating numeric
+user_collection.remaining_pct integer
+user_collection.status character varying
+user_collection.created_at timestamp without time zone
+users.id uuid
+users.email character varying
+users.password_hash character varying
+users.display_name character varying
+users.role character varying
+users.created_at timestamp without time zone
+# rows: accords 46, brands 64, families 48, fragrance_accords 256, fragrance_embeddings 137,
+# fragrance_families 137, fragrance_notes 747, fragrance_occasions 27, fragrance_prices 29,
+# fragrances 137, notes 254, occasions 7, price_logs 1, retailers 1, user_collection 4, users 2
