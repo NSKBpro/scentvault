@@ -35,7 +35,16 @@ jobs:
       - run: ruff check . && ruff format --check .
       - run: mypy app scripts
       - run: python -m scripts.gen_types --check
-      - run: pytest -q
+      - name: Tests
+        shell: bash
+        run: |
+          set -o pipefail
+          pytest -q -rfE --tb=short 2>&1 | tee pytest.log || {
+            # Surface each failure as an annotation (visible on the run summary page).
+            grep -E "^(FAILED|ERROR) " pytest.log | head -20 | while read -r line; do echo "::error title=pytest::$line"; done
+            grep -E "^E   " pytest.log | head -15 | while read -r line; do echo "::error title=pytest detail::$line"; done
+            exit 1
+          }
       - name: Migrations match the models
         run: alembic check
 
