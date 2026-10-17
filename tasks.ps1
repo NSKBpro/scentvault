@@ -48,8 +48,10 @@ switch ($Task) {
   "seed"    { In-Api { & $Py -m seeds.run } }
   "demo"    { In-Api { & $Py -m seeds.run --demo } }
   "admin-user" {
-    if (-not $AdminEmail) { throw "Usage: ./tasks.ps1 admin-user -AdminEmail you@example.com -AdminPassword '...'" }
-    In-Api { & $Py -m seeds.run --admin $AdminEmail --password $AdminPassword }
+    if (-not $AdminEmail) { throw "Usage: ./tasks.ps1 admin-user -AdminEmail you@example.com [-AdminPassword '...']  (password only needed for a new account)" }
+    $seedArgs = @("-m", "seeds.run", "--admin", $AdminEmail)
+    if ($AdminPassword) { $seedArgs += @("--password", $AdminPassword) }
+    In-Api { & $Py @seedArgs }
   }
   "api"     { In-Api { & $Py -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8004 } }
   "worker"  { In-Api { & $Py -m arq app.workers.arq_worker.WorkerSettings } }
