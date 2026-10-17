@@ -24,7 +24,7 @@ apps/mobile/ios/
 # Data & backups
 backups/
 *.dump
-data/
+/data/
 
 # OS / editors
 .DS_Store

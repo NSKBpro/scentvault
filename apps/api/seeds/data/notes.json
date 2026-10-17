@@ -1,0 +1,790 @@
+[
+ {
+  "name": "Calone",
+  "category": "Aquatic"
+ },
+ {
+  "name": "Coral",
+  "category": "Aquatic"
+ },
+ {
+  "name": "Drift Salt",
+  "category": "Aquatic"
+ },
+ {
+  "name": "Ozone",
+  "category": "Aquatic"
+ },
+ {
+  "name": "Rain Notes",
+  "category": "Aquatic"
+ },
+ {
+  "name": "Salt",
+  "category": "Aquatic"
+ },
+ {
+  "name": "Sea Notes",
+  "category": "Aquatic"
+ },
+ {
+  "name": "Seaweed",
+  "category": "Aquatic"
+ },
+ {
+  "name": "Sage",
+  "category": "Aromatic"
+ },
+ {
+  "name": "Bergamot",
+  "category": "Citrus"
+ },
+ {
+  "name": "Bitter Orange",
+  "category": "Citrus"
+ },
+ {
+  "name": "Blood Orange",
+  "category": "Citrus"
+ },
+ {
+  "name": "Calamansi",
+  "category": "Citrus"
+ },
+ {
+  "name": "Citron",
+  "category": "Citrus"
+ },
+ {
+  "name": "Finger Lime",
+  "category": "Citrus"
+ },
+ {
+  "name": "Grapefruit",
+  "category": "Citrus"
+ },
+ {
+  "name": "Kumquat",
+  "category": "Citrus"
+ },
+ {
+  "name": "Lemon",
+  "category": "Citrus"
+ },
+ {
+  "name": "Lime",
+  "category": "Citrus"
+ },
+ {
+  "name": "Mandarin Orange",
+  "category": "Citrus"
+ },
+ {
+  "name": "Orange",
+  "category": "Citrus"
+ },
+ {
+  "name": "Petitgrain",
+  "category": "Citrus"
+ },
+ {
+  "name": "Pomelo",
+  "category": "Citrus"
+ },
+ {
+  "name": "Yuzu",
+  "category": "Citrus"
+ },
+ {
+  "name": "Camellia",
+  "category": "Floral"
+ },
+ {
+  "name": "Cherry Blossom",
+  "category": "Floral"
+ },
+ {
+  "name": "Frangipani",
+  "category": "Floral"
+ },
+ {
+  "name": "Freesia",
+  "category": "Floral"
+ },
+ {
+  "name": "Gardenia",
+  "category": "Floral"
+ },
+ {
+  "name": "Geranium",
+  "category": "Floral"
+ },
+ {
+  "name": "Heliotrope",
+  "category": "Floral"
+ },
+ {
+  "name": "Honeysuckle",
+  "category": "Floral"
+ },
+ {
+  "name": "Iris",
+  "category": "Floral"
+ },
+ {
+  "name": "Jasmine",
+  "category": "Floral"
+ },
+ {
+  "name": "Lavender",
+  "category": "Floral"
+ },
+ {
+  "name": "Lilac",
+  "category": "Floral"
+ },
+ {
+  "name": "Lily of the Valley",
+  "category": "Floral"
+ },
+ {
+  "name": "Lotus",
+  "category": "Floral"
+ },
+ {
+  "name": "Magnolia",
+  "category": "Floral"
+ },
+ {
+  "name": "Mimosa",
+  "category": "Floral"
+ },
+ {
+  "name": "Neroli",
+  "category": "Floral"
+ },
+ {
+  "name": "Orange Blossom",
+  "category": "Floral"
+ },
+ {
+  "name": "Orchid",
+  "category": "Floral"
+ },
+ {
+  "name": "Osmanthus",
+  "category": "Floral"
+ },
+ {
+  "name": "Peony",
+  "category": "Floral"
+ },
+ {
+  "name": "Rose",
+  "category": "Floral"
+ },
+ {
+  "name": "Tuberose",
+  "category": "Floral"
+ },
+ {
+  "name": "Violet",
+  "category": "Floral"
+ },
+ {
+  "name": "Ylang-Ylang",
+  "category": "Floral"
+ },
+ {
+  "name": "Apple",
+  "category": "Fruity"
+ },
+ {
+  "name": "Apricot",
+  "category": "Fruity"
+ },
+ {
+  "name": "Banana",
+  "category": "Fruity"
+ },
+ {
+  "name": "Black Currant",
+  "category": "Fruity"
+ },
+ {
+  "name": "Blueberry",
+  "category": "Fruity"
+ },
+ {
+  "name": "Cherry",
+  "category": "Fruity"
+ },
+ {
+  "name": "Cranberry",
+  "category": "Fruity"
+ },
+ {
+  "name": "Fig",
+  "category": "Fruity"
+ },
+ {
+  "name": "Guava",
+  "category": "Fruity"
+ },
+ {
+  "name": "Kiwi",
+  "category": "Fruity"
+ },
+ {
+  "name": "Lychee",
+  "category": "Fruity"
+ },
+ {
+  "name": "Mango",
+  "category": "Fruity"
+ },
+ {
+  "name": "Papaya",
+  "category": "Fruity"
+ },
+ {
+  "name": "Passionfruit",
+  "category": "Fruity"
+ },
+ {
+  "name": "Peach",
+  "category": "Fruity"
+ },
+ {
+  "name": "Pear",
+  "category": "Fruity"
+ },
+ {
+  "name": "Pineapple",
+  "category": "Fruity"
+ },
+ {
+  "name": "Plum",
+  "category": "Fruity"
+ },
+ {
+  "name": "Pomegranate",
+  "category": "Fruity"
+ },
+ {
+  "name": "Raspberry",
+  "category": "Fruity"
+ },
+ {
+  "name": "Strawberry",
+  "category": "Fruity"
+ },
+ {
+  "name": "Watermelon",
+  "category": "Fruity"
+ },
+ {
+  "name": "Absinthe",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Almond",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Cacao",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Caramel",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Chestnut",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Chocolate",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Coconut",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Coffee",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Cognac",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Cream",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Hazelnut",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Honey",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Licorice",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Maple Syrup",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Marshmallow",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Milk",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Peanut",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Praline",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Rum",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Sugar",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Tonka Bean",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Vanilla",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Whiskey",
+  "category": "Gourmand"
+ },
+ {
+  "name": "Artemisia",
+  "category": "Green"
+ },
+ {
+  "name": "Basil",
+  "category": "Green"
+ },
+ {
+  "name": "Black Tea",
+  "category": "Green"
+ },
+ {
+  "name": "Dill",
+  "category": "Green"
+ },
+ {
+  "name": "Eucalyptus",
+  "category": "Green"
+ },
+ {
+  "name": "Fig Leaf",
+  "category": "Green"
+ },
+ {
+  "name": "Galbanum",
+  "category": "Green"
+ },
+ {
+  "name": "Grass",
+  "category": "Green"
+ },
+ {
+  "name": "Green Tea",
+  "category": "Green"
+ },
+ {
+  "name": "Matcha",
+  "category": "Green"
+ },
+ {
+  "name": "Mate",
+  "category": "Green"
+ },
+ {
+  "name": "Mint",
+  "category": "Green"
+ },
+ {
+  "name": "Parsley",
+  "category": "Green"
+ },
+ {
+  "name": "Rosemary",
+  "category": "Green"
+ },
+ {
+  "name": "Shiso",
+  "category": "Green"
+ },
+ {
+  "name": "Thyme",
+  "category": "Green"
+ },
+ {
+  "name": "Tomato Leaf",
+  "category": "Green"
+ },
+ {
+  "name": "Violet Leaf",
+  "category": "Green"
+ },
+ {
+  "name": "Leather",
+  "category": "Leather"
+ },
+ {
+  "name": "Raw Leather",
+  "category": "Leather"
+ },
+ {
+  "name": "Saffiano Leather",
+  "category": "Leather"
+ },
+ {
+  "name": "Smoked Leather",
+  "category": "Leather"
+ },
+ {
+  "name": "Suede",
+  "category": "Leather"
+ },
+ {
+  "name": "Chalk",
+  "category": "Mineral"
+ },
+ {
+  "name": "Concrete",
+  "category": "Mineral"
+ },
+ {
+  "name": "Flint",
+  "category": "Mineral"
+ },
+ {
+  "name": "Wet Stone",
+  "category": "Mineral"
+ },
+ {
+  "name": "Aldehydes",
+  "category": "Musky"
+ },
+ {
+  "name": "Ambergris",
+  "category": "Musky"
+ },
+ {
+  "name": "Cashmeran",
+  "category": "Musky"
+ },
+ {
+  "name": "Castoreum",
+  "category": "Musky"
+ },
+ {
+  "name": "Civet",
+  "category": "Musky"
+ },
+ {
+  "name": "Ink",
+  "category": "Musky"
+ },
+ {
+  "name": "Metallic Notes",
+  "category": "Musky"
+ },
+ {
+  "name": "Musk",
+  "category": "Musky"
+ },
+ {
+  "name": "Powdery Musk",
+  "category": "Musky"
+ },
+ {
+  "name": "Skin Notes",
+  "category": "Musky"
+ },
+ {
+  "name": "Solar Notes",
+  "category": "Musky"
+ },
+ {
+  "name": "White Musk",
+  "category": "Musky"
+ },
+ {
+  "name": "Amber",
+  "category": "Oriental"
+ },
+ {
+  "name": "Benzoin",
+  "category": "Oriental"
+ },
+ {
+  "name": "Elemi",
+  "category": "Oriental"
+ },
+ {
+  "name": "Frankincense",
+  "category": "Oriental"
+ },
+ {
+  "name": "Labdanum",
+  "category": "Oriental"
+ },
+ {
+  "name": "Myrrh",
+  "category": "Oriental"
+ },
+ {
+  "name": "Opoponax",
+  "category": "Oriental"
+ },
+ {
+  "name": "Peru Balsam",
+  "category": "Oriental"
+ },
+ {
+  "name": "Resin",
+  "category": "Oriental"
+ },
+ {
+  "name": "Styrax",
+  "category": "Oriental"
+ },
+ {
+  "name": "Tolu Balsam",
+  "category": "Oriental"
+ },
+ {
+  "name": "Ash",
+  "category": "Smoky"
+ },
+ {
+  "name": "Burnt Wood",
+  "category": "Smoky"
+ },
+ {
+  "name": "Gunpowder",
+  "category": "Smoky"
+ },
+ {
+  "name": "Incense",
+  "category": "Smoky"
+ },
+ {
+  "name": "Incense Smoke",
+  "category": "Smoky"
+ },
+ {
+  "name": "Smoke",
+  "category": "Smoky"
+ },
+ {
+  "name": "Tar",
+  "category": "Smoky"
+ },
+ {
+  "name": "Allspice",
+  "category": "Spicy"
+ },
+ {
+  "name": "Anise",
+  "category": "Spicy"
+ },
+ {
+  "name": "Bay Leaf",
+  "category": "Spicy"
+ },
+ {
+  "name": "Black Pepper",
+  "category": "Spicy"
+ },
+ {
+  "name": "Cardamom",
+  "category": "Spicy"
+ },
+ {
+  "name": "Chili Pepper",
+  "category": "Spicy"
+ },
+ {
+  "name": "Cinnamon",
+  "category": "Spicy"
+ },
+ {
+  "name": "Clove",
+  "category": "Spicy"
+ },
+ {
+  "name": "Cumin",
+  "category": "Spicy"
+ },
+ {
+  "name": "Fennel",
+  "category": "Spicy"
+ },
+ {
+  "name": "Fenugreek",
+  "category": "Spicy"
+ },
+ {
+  "name": "Ginger",
+  "category": "Spicy"
+ },
+ {
+  "name": "Green Pepper",
+  "category": "Spicy"
+ },
+ {
+  "name": "Nutmeg",
+  "category": "Spicy"
+ },
+ {
+  "name": "Pimento",
+  "category": "Spicy"
+ },
+ {
+  "name": "Pink Pepper",
+  "category": "Spicy"
+ },
+ {
+  "name": "Saffron",
+  "category": "Spicy"
+ },
+ {
+  "name": "Star Anise",
+  "category": "Spicy"
+ },
+ {
+  "name": "Wasabi",
+  "category": "Spicy"
+ },
+ {
+  "name": "White Pepper",
+  "category": "Spicy"
+ },
+ {
+  "name": "Ambroxan",
+  "category": "Woody"
+ },
+ {
+  "name": "Amyris",
+  "category": "Woody"
+ },
+ {
+  "name": "Birch",
+  "category": "Woody"
+ },
+ {
+  "name": "Cashmere Wood",
+  "category": "Woody"
+ },
+ {
+  "name": "Cedar",
+  "category": "Woody"
+ },
+ {
+  "name": "Cypress",
+  "category": "Woody"
+ },
+ {
+  "name": "Driftwood",
+  "category": "Woody"
+ },
+ {
+  "name": "Ebony Wood",
+  "category": "Woody"
+ },
+ {
+  "name": "Fir Balsam",
+  "category": "Woody"
+ },
+ {
+  "name": "Guaiac Wood",
+  "category": "Woody"
+ },
+ {
+  "name": "Hay",
+  "category": "Woody"
+ },
+ {
+  "name": "Hinoki Wood",
+  "category": "Woody"
+ },
+ {
+  "name": "Iso E Super",
+  "category": "Woody"
+ },
+ {
+  "name": "Juniper Berry",
+  "category": "Woody"
+ },
+ {
+  "name": "Mahogany",
+  "category": "Woody"
+ },
+ {
+  "name": "Moss",
+  "category": "Woody"
+ },
+ {
+  "name": "Oak",
+  "category": "Woody"
+ },
+ {
+  "name": "Oakmoss",
+  "category": "Woody"
+ },
+ {
+  "name": "Oud",
+  "category": "Woody"
+ },
+ {
+  "name": "Papyrus",
+  "category": "Woody"
+ },
+ {
+  "name": "Patchouli",
+  "category": "Woody"
+ },
+ {
+  "name": "Pine",
+  "category": "Woody"
+ },
+ {
+  "name": "Sandalwood",
+  "category": "Woody"
+ },
+ {
+  "name": "Teak Wood",
+  "category": "Woody"
+ },
+ {
+  "name": "Tobacco",
+  "category": "Woody"
+ },
+ {
+  "name": "Vetiver",
+  "category": "Woody"
+ }
+]

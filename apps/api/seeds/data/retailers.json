@@ -1,0 +1,27 @@
+[
+ {
+  "name": "Notino",
+  "website_url": "https://www.notino.rs",
+  "country": "Serbia"
+ },
+ {
+  "name": "Douglas",
+  "website_url": "https://www.douglas.de",
+  "country": "Germany"
+ },
+ {
+  "name": "Sephora",
+  "website_url": "https://www.sephora.com",
+  "country": "USA"
+ },
+ {
+  "name": "FragranceNet",
+  "website_url": "https://www.fragrancenet.com",
+  "country": "USA"
+ },
+ {
+  "name": "Lilly Drogerie",
+  "website_url": "https://www.lilly.rs",
+  "country": "Serbia"
+ }
+]

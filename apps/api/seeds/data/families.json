@@ -1,0 +1,127 @@
+[
+ {
+  "name": "Woody",
+  "axis": "woody",
+  "description": "Dry, earthy woods: cedar, sandalwood, vetiver."
+ },
+ {
+  "name": "Woody Spicy",
+  "axis": "woody",
+  "description": "Woods warmed with pepper, cardamom or clove."
+ },
+ {
+  "name": "Chypre",
+  "axis": "woody",
+  "description": "Citrus top over a mossy, woody base (oakmoss, patchouli)."
+ },
+ {
+  "name": "Leather",
+  "axis": "woody",
+  "description": "Smoky, tarry, suede or leather-goods accords."
+ },
+ {
+  "name": "Oud",
+  "axis": "woody",
+  "description": "Agarwood — dark, resinous, animalic."
+ },
+ {
+  "name": "Citrus",
+  "axis": "citrus",
+  "description": "Zesty bergamot, lemon, orange, grapefruit."
+ },
+ {
+  "name": "Hesperidic Cologne",
+  "axis": "citrus",
+  "description": "Classic eau de cologne structure: citrus, neroli, herbs."
+ },
+ {
+  "name": "Aromatic",
+  "axis": "aromatic",
+  "description": "Herbs like lavender, sage and rosemary."
+ },
+ {
+  "name": "Fougère",
+  "axis": "aromatic",
+  "description": "Lavender, coumarin and oakmoss — the barbershop classic."
+ },
+ {
+  "name": "Aromatic Fougère",
+  "axis": "aromatic",
+  "description": "Modern fougère with fresh herbs and woods."
+ },
+ {
+  "name": "Oriental",
+  "axis": "oriental",
+  "description": "Warm resins, amber, vanilla and spice (also called Amber)."
+ },
+ {
+  "name": "Amber",
+  "axis": "oriental",
+  "description": "Labdanum, benzoin and vanilla warmth."
+ },
+ {
+  "name": "Spicy",
+  "axis": "oriental",
+  "description": "Cinnamon, clove, saffron, pepper-forward."
+ },
+ {
+  "name": "Gourmand",
+  "axis": "oriental",
+  "description": "Edible notes: vanilla, caramel, coffee, praline."
+ },
+ {
+  "name": "Tobacco",
+  "axis": "oriental",
+  "description": "Sweet, honeyed tobacco leaf."
+ },
+ {
+  "name": "Fresh",
+  "axis": "fresh",
+  "description": "Clean, airy, light compositions."
+ },
+ {
+  "name": "Aquatic",
+  "axis": "fresh",
+  "description": "Marine, ozonic, sea-spray notes."
+ },
+ {
+  "name": "Green",
+  "axis": "fresh",
+  "description": "Cut grass, leaves, galbanum, violet leaf."
+ },
+ {
+  "name": "Fresh Spicy",
+  "axis": "fresh",
+  "description": "Bright spices (ginger, pink pepper) with citrus."
+ },
+ {
+  "name": "Floral",
+  "axis": "floral",
+  "description": "Rose, jasmine, lily — flowers at the heart."
+ },
+ {
+  "name": "White Floral",
+  "axis": "floral",
+  "description": "Tuberose, jasmine, orange blossom, gardenia."
+ },
+ {
+  "name": "Floral Fruity",
+  "axis": "floral",
+  "description": "Flowers with sweet fruit."
+ },
+ {
+  "name": "Fruity",
+  "axis": "floral",
+  "description": "Non-citrus fruit: berries, apple, pear, peach."
+ },
+ {
+  "name": "Powdery",
+  "axis": "floral",
+  "description": "Iris, violet, heliotrope — soft cosmetic powder."
+ },
+ {
+  "name": "Musky",
+  "axis": "fresh",
+  "description": "Clean or skin-like musks."
+ }
+]

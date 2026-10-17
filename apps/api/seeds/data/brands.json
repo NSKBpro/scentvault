@@ -1,0 +1,152 @@
+[
+ {
+  "name": "Chanel",
+  "country": "France",
+  "website_url": "https://www.chanel.com"
+ },
+ {
+  "name": "Dior",
+  "country": "France",
+  "website_url": "https://www.dior.com"
+ },
+ {
+  "name": "Tom Ford",
+  "country": "USA",
+  "website_url": "https://www.tomford.com"
+ },
+ {
+  "name": "Creed",
+  "country": "France",
+  "website_url": "https://creedboutique.com"
+ },
+ {
+  "name": "Giorgio Armani",
+  "country": "Italy",
+  "website_url": "https://www.armani.com"
+ },
+ {
+  "name": "Versace",
+  "country": "Italy",
+  "website_url": "https://www.versace.com"
+ },
+ {
+  "name": "Yves Saint Laurent",
+  "country": "France",
+  "website_url": "https://www.ysl.com"
+ },
+ {
+  "name": "Prada",
+  "country": "Italy",
+  "website_url": "https://www.prada.com"
+ },
+ {
+  "name": "Dolce & Gabbana",
+  "country": "Italy",
+  "website_url": "https://www.dolcegabbana.com"
+ },
+ {
+  "name": "Hermès",
+  "country": "France",
+  "website_url": "https://www.hermes.com"
+ },
+ {
+  "name": "Guerlain",
+  "country": "France"
+ },
+ {
+  "name": "Maison Francis Kurkdjian",
+  "country": "France"
+ },
+ {
+  "name": "Parfums de Marly",
+  "country": "France"
+ },
+ {
+  "name": "Jo Malone",
+  "country": "United Kingdom"
+ },
+ {
+  "name": "Le Labo",
+  "country": "USA"
+ },
+ {
+  "name": "Byredo",
+  "country": "Sweden"
+ },
+ {
+  "name": "Xerjoff",
+  "country": "Italy"
+ },
+ {
+  "name": "Initio",
+  "country": "France"
+ },
+ {
+  "name": "Lattafa",
+  "country": "UAE"
+ },
+ {
+  "name": "Armaf",
+  "country": "UAE"
+ },
+ {
+  "name": "Montblanc",
+  "country": "Germany"
+ },
+ {
+  "name": "Rabanne",
+  "country": "France"
+ },
+ {
+  "name": "Jean Paul Gaultier",
+  "country": "France"
+ },
+ {
+  "name": "Viktor&Rolf",
+  "country": "Netherlands"
+ },
+ {
+  "name": "Azzaro",
+  "country": "France"
+ },
+ {
+  "name": "Hugo Boss",
+  "country": "Germany"
+ },
+ {
+  "name": "Bvlgari",
+  "country": "Italy"
+ },
+ {
+  "name": "Kilian",
+  "country": "France"
+ },
+ {
+  "name": "Maison Margiela",
+  "country": "France"
+ },
+ {
+  "name": "Mancera",
+  "country": "France"
+ },
+ {
+  "name": "Diptyque",
+  "country": "France"
+ },
+ {
+  "name": "Narciso Rodriguez",
+  "country": "USA"
+ },
+ {
+  "name": "Valentino",
+  "country": "Italy"
+ },
+ {
+  "name": "Givenchy",
+  "country": "France"
+ },
+ {
+  "name": "Amouage",
+  "country": "Oman"
+ }
+]
