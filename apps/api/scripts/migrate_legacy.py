@@ -8,6 +8,8 @@ values on the way in.
     alembic upgrade head
     # 2. copy (source = old DB, target = DATABASE_URL from .env unless --target is given)
     python -m scripts.migrate_legacy --source postgresql://scentvault:password@localhost:5432/scentvault_legacy
+    # 3. then add any missing reference data (never before step 2 — ids would clash)
+    python -m seeds.run
 
 What it does
 * Keeps ids, so links between rows survive.
@@ -537,6 +539,12 @@ async def migrate(
         if existing and not force:
             raise SystemExit(
                 f"Target already has {existing} fragrances. Use --force to copy anyway (ids may clash)."
+            )
+        seeded = await dst.fetchval("SELECT (SELECT COUNT(*) FROM brands) + (SELECT COUNT(*) FROM notes)")
+        if seeded and not force:
+            raise SystemExit(
+                "Target already has reference data (brands/notes). Copy the legacy data into a fresh schema "
+                "first and run `python -m seeds.run` afterwards — the seed only adds what is missing."
             )
         return await LegacyMigrator(src, dst, model_version).run()
     finally:

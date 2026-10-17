@@ -30,16 +30,21 @@ function Read-DotEnv {
 
 function In-Api([scriptblock]$Block) { Push-Location $Api; try { & $Block } finally { Pop-Location } }
 
+# PowerShell doesn't stop on a failing native command (docker, python, ...); this does.
+function Check([string]$What) { if ($LASTEXITCODE -ne 0) { throw "$What failed (exit code $LASTEXITCODE) - stopping here." } }
+
 switch ($Task) {
   "setup" {
-    In-Api { python -m venv .venv; & $Py -m pip install --upgrade pip; & $Py -m pip install -e ".[dev,ml]" }
+    $ver = (python -c "import sys; print(sys.version_info >= (3, 12))")
+    if ($ver -ne "True") { throw "Python 3.12+ is required (python --version shows an older one)." }
+    In-Api { python -m venv .venv; & $Py -m pip install --upgrade pip; & $Py -m pip install -e ".[dev,ml]" }; Check "Installing the API"
     Push-Location (Join-Path $Root "apps/admin"); npm ci; Pop-Location
     Push-Location (Join-Path $Root "apps/mobile"); npm ci; Pop-Location
-    if (-not (Test-Path (Join-Path $Root ".env"))) { Copy-Item (Join-Path $Root ".env.example") (Join-Path $Root ".env"); Write-Host "Created .env — fill in JWT_SECRET and POSTGRES_PASSWORD." }
+    if (-not (Test-Path (Join-Path $Root ".env"))) { Copy-Item (Join-Path $Root ".env.example") (Join-Path $Root ".env"); Write-Host "Created .env - fill in JWT_SECRET and POSTGRES_PASSWORD." }
   }
   "up"      { docker compose up -d db redis }
   "down"    { docker compose down }
-  "migrate" { In-Api { & $Py -m alembic upgrade head } }
+  "migrate" { In-Api { & $Py -m alembic upgrade head }; Check "Migrations" }
   "seed"    { In-Api { & $Py -m seeds.run } }
   "demo"    { In-Api { & $Py -m seeds.run --demo } }
   "admin-user" {
@@ -69,16 +74,19 @@ switch ($Task) {
     $backup = Join-Path $Root "backups/scentvault_v1_$stamp.dump"
     Write-Host "1/5 Backing up '$db' to $backup"
     # Dump inside the container and copy the file out (piping binary through PowerShell corrupts it).
-    docker exec scentvault_db pg_dump -U $u -Fc $db -f /tmp/sv_backup.dump
-    docker cp scentvault_db:/tmp/sv_backup.dump $backup
+    docker exec scentvault_db pg_dump -U $u -Fc $db -f /tmp/sv_backup.dump; Check "Backup"
+    docker cp scentvault_db:/tmp/sv_backup.dump $backup; Check "Copying the backup"
+    $exists = docker exec scentvault_db psql -U $u -d postgres -tAc "SELECT 1 FROM pg_database WHERE datname = '${db}_legacy'"
+    if ("$exists".Trim() -eq "1") { throw "'${db}_legacy' already exists - upgrade-v1 has already run. Restore from backups/ if you need to start over." }
     Write-Host "2/5 Renaming '$db' -> '${db}_legacy' and creating a fresh '$db'"
     docker exec scentvault_db psql -U $u -d postgres -v ON_ERROR_STOP=1 -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = '$db' AND pid <> pg_backend_pid();" -c "ALTER DATABASE $db RENAME TO ${db}_legacy;" -c "CREATE DATABASE $db OWNER $u;"
+    Check "Renaming the database"
     Write-Host "3/5 Creating the 2.0 schema"
-    In-Api { & $Py -m alembic upgrade head }
-    Write-Host "4/5 Seeding reference data"
-    In-Api { & $Py -m seeds.run }
-    Write-Host "5/5 Copying your data"
-    In-Api { & $Py -m scripts.migrate_legacy --source "postgresql://${u}:${pw}@localhost:5432/${db}_legacy" --force }
+    In-Api { & $Py -m alembic upgrade head }; Check "Migrations"
+    Write-Host "4/5 Copying your data"
+    In-Api { & $Py -m scripts.migrate_legacy --source "postgresql://${u}:${pw}@localhost:5432/${db}_legacy" }; Check "Copying data"
+    Write-Host "5/5 Adding missing reference data (notes, families, accords...)"
+    In-Api { & $Py -m seeds.run }; Check "Seeding"
     Write-Host "Done. Old data stays in '${db}_legacy' (drop it when happy). Backup: $backup"
   }
   default { Get-Content $PSCommandPath | Select-Object -First 15 }
