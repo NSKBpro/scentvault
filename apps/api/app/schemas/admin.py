@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import uuid
 from datetime import datetime
-from typing import Any
+from typing import Annotated, Any
 
-from pydantic import EmailStr, Field
+from pydantic import Field
 
 from app.core.constants import Role
 from app.schemas.common import Schema
@@ -33,15 +33,20 @@ class AdminStats(Schema):
     queues: list[WorkQueue]
 
 
+# Lenient on purpose (like login): accounts carried over from 1.x may use addresses such as
+# name@host.local that strict validation rejects, and that must not block editing them.
+LooseEmail = Annotated[str, Field(min_length=3, max_length=255, pattern=r"^[^@\s]+@[^@\s]+$")]
+
+
 class AdminUserCreate(Schema):
-    email: EmailStr
+    email: LooseEmail
     password: str = Field(min_length=8, max_length=128)
     display_name: str | None = None
     role: Role = "user"
 
 
 class AdminUserUpdate(Schema):
-    email: EmailStr | None = None
+    email: LooseEmail | None = None
     display_name: str | None = None
     role: Role | None = None
     password: str | None = Field(default=None, min_length=8, max_length=128)

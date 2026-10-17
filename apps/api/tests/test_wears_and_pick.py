@@ -4,6 +4,7 @@ from datetime import date, timedelta
 
 from conftest import API, fragrance_id
 
+from app.core.clock import user_today
 from app.core.config import PickWeights
 from app.services.pick_scorer import Candidate, Context, rank, score
 
@@ -76,7 +77,7 @@ async def test_log_wear_updates_remaining_stats_and_cost_per_wear(client, user):
     assert r.status_code == 201, r.text
     wear = r.json()
     assert wear["remaining_pct"] == 99  # 10 sprays × 0.1 ml of 100 ml
-    assert wear["fragrance_name"] == "Bleu de Chanel" and wear["worn_on"] == date.today().isoformat()
+    assert wear["fragrance_name"] == "Bleu de Chanel" and wear["worn_on"] == user_today(None).isoformat()
 
     stats = (await client.get(f"{API}/wears/stats", headers=h)).json()
     assert stats["total_wears"] == 1 and stats["compliments"] == 1
@@ -85,7 +86,7 @@ async def test_log_wear_updates_remaining_stats_and_cost_per_wear(client, user):
     assert b["cost_per_wear_is_estimate"] is True and b["cost_per_wear"] == 0.6  # 150 / (100 / 0.4)
 
     for i in range(1, 6):  # enough wears → real cost per wear
-        d = (date.today() - timedelta(days=i)).isoformat()
+        d = (user_today(None) - timedelta(days=i)).isoformat()
         await client.post(f"{API}/wears", headers=h, json={"collection_item_id": item["id"], "worn_on": d})
     b = next(
         x
@@ -96,7 +97,7 @@ async def test_log_wear_updates_remaining_stats_and_cost_per_wear(client, user):
 
     listed = (
         await client.get(
-            f"{API}/wears", headers=h, params={"from": (date.today() - timedelta(days=2)).isoformat()}
+            f"{API}/wears", headers=h, params={"from": (user_today(None) - timedelta(days=2)).isoformat()}
         )
     ).json()
     assert len(listed) == 3
@@ -111,7 +112,7 @@ async def test_wear_by_fragrance_links_owned_bottle_and_is_idempotent(client, us
     b = await client.post(f"{API}/wears", headers=h, json=body)
     assert a.status_code == 201 and b.status_code == 200 and a.json()["id"] == b.json()["id"]
     assert a.json()["collection_item_id"] == item["id"]
-    future = (date.today() + timedelta(days=5)).isoformat()
+    future = (user_today(None) + timedelta(days=5)).isoformat()
     assert (
         await client.post(f"{API}/wears", headers=h, json={**body, "client_ref": None, "worn_on": future})
     ).status_code == 422

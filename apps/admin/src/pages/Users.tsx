@@ -128,7 +128,10 @@ export default function Users() {
           saving={save.isPending}
           onClose={() => setEditing(null)}
           onSave={(v) => {
-            const body: Partial<UserForm> = { email: v.email, display_name: v.display_name || undefined, role: v.role };
+            const isNew = editing === 'new';
+            const body: Partial<UserForm> = { display_name: v.display_name || undefined, role: v.role };
+            // Only send the email when it changed, so an unusual legacy address never blocks other edits.
+            if (isNew || v.email.trim().toLowerCase() !== editing.email) body.email = v.email.trim();
             if (v.password) body.password = v.password;
             save.mutate({ id: editing === 'new' ? undefined : editing.id, body });
           }}
@@ -158,7 +161,7 @@ function UserModal({ user, saving, onClose, onSave }: { user: AdminUserOut | nul
           </select>
         </Field>
         <Field label={user ? 'New password' : 'Password'} required={!user} hint={user ? 'Leave empty to keep the current password' : 'At least 8 characters'} error={formState.errors.password && 'At least 8 characters'}>
-          <input {...register('password', { required: !user, minLength: user ? undefined : 8 })} type="password" autoComplete="new-password" className={inputClass} />
+          <input {...register('password', { required: !user, minLength: 8 })} type="password" autoComplete="new-password" className={inputClass} />
         </Field>
         <div className="flex justify-end gap-3">
           <Button type="button" variant="ghost" onClick={onClose}>

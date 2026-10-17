@@ -173,6 +173,19 @@ async def test_admin_stats_and_users(client, admin, user):
     uid = users["items"][0]["id"]
     r = await client.put(f"{API}/admin/users/{uid}", headers=h, json={"display_name": "Renamed"})
     assert r.json()["display_name"] == "Renamed"
+    # Admin password reset, also for a legacy address strict validation would reject.
+    r = await client.put(
+        f"{API}/admin/users/{uid}",
+        headers=h,
+        json={"email": "legacy@host.local", "password": "brand-new-pass"},
+    )
+    assert r.status_code == 200, r.text
+    r = await client.post(
+        f"{API}/auth/login/json", json={"email": "Legacy@Host.local", "password": "brand-new-pass"}
+    )
+    assert r.status_code == 200, r.text
+    r = await client.put(f"{API}/admin/users/{uid}", headers=h, json={"password": "short"})
+    assert r.status_code == 422
     me = (await client.get(f"{API}/auth/me", headers=h)).json()
     assert (await client.delete(f"{API}/admin/users/{me['id']}", headers=h)).status_code == 422
 
