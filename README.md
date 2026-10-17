@@ -5,7 +5,7 @@ Your fragrance collection, with a memory. ScentVault tracks the bottles you own,
 | App | Stack | Where |
 | --- | --- | --- |
 | **API** | FastAPI · SQLAlchemy 2 (async) · Postgres 16 + pgvector · arq/Redis · sentence-transformers · Ollama (optional) | `apps/api` |
-| **Mobile** | Expo 54 · React Native 0.81 · React Navigation 7 · Zustand · SQLite offline cache | `apps/mobile` |
+| **Mobile** | Expo SDK 57 · React Native 0.86 · React Navigation 7 · Zustand · SQLite offline cache | `apps/mobile` |
 | **Admin** | React 19 · Vite 7 · TanStack Query · Tailwind | `apps/admin` |
 | **API types** | TypeScript generated from the API's OpenAPI schema, shared by both clients | `packages/api-types` |
 
@@ -42,10 +42,10 @@ macOS / Linux / WSL: the same targets exist in the `Makefile` (`make setup up mi
 ```powershell
 cd apps/mobile
 copy .env.example .env                 # EXPO_PUBLIC_API_URL=http://<your PC's LAN IP>:8004
-npx expo start                         # scan the QR code with Expo Go (same Wi-Fi)
+npx expo start                         # scan the QR code with Expo Go for SDK 57 (same Wi-Fi)
 ```
 
-Push notifications need a development build with an EAS project id (`eas init`); in Expo Go everything else works and notifications still show in the Deals tab.
+If the phone can't connect, allow ports 8004 (API) and 8081 (Expo) in Windows Firewall, or use `npx expo start --tunnel`. Push notifications need a development build with an EAS project id (`eas init`); in Expo Go everything else works and notifications still show in the Deals tab.
 
 ### AI pieces (all optional, everything degrades gracefully)
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import type { ReasonChip } from '@api-types';
 import { colors } from '../theme/colors';

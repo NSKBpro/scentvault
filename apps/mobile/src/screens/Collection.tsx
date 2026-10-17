@@ -4,7 +4,7 @@
  * Status chips (Owned / Wishlist / Tried / Archive) + family chips, sort menu,
  * one-tap "wear today" on owned bottles, long-press to edit the bottle, FAB to add.
  */
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { FlatList, Pressable, RefreshControl, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

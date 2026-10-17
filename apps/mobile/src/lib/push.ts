@@ -5,7 +5,7 @@
 import { Platform } from 'react-native';
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
-import Constants from 'expo-constants';
+import Constants, { ExecutionEnvironment } from 'expo-constants';
 import { api } from './api';
 
 let currentToken: string | null = null;
@@ -19,8 +19,19 @@ Notifications.setNotificationHandler({
   }),
 });
 
+/** Expo Go has no remote push (removed on Android since SDK 53); needs a development build. */
+const inExpoGo = Constants.executionEnvironment === ExecutionEnvironment.StoreClient;
+
 export async function registerForPush(): Promise<string | null> {
-  if (!Device.isDevice) return null;
+  if (!Device.isDevice || inExpoGo) return null;
+  try {
+    return await register();
+  } catch {
+    return null;
+  }
+}
+
+async function register(): Promise<string | null> {
   if (Platform.OS === 'android') {
     await Notifications.setNotificationChannelAsync('default', {
       name: 'ScentVault',

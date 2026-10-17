@@ -5,7 +5,7 @@
  * Optional label above the input.
  */
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { StyleSheet, Text, TextInput, TextInputProps, View, ViewStyle } from 'react-native';
 import { colors } from '../theme/colors';
 import { typography } from '../theme/typography';

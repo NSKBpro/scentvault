@@ -2,7 +2,6 @@
  * SearchBar — Themed search input with magnifying glass icon.
  */
 
-import React from 'react';
 import { StyleSheet, TextInput, View, ViewStyle } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../theme/colors';

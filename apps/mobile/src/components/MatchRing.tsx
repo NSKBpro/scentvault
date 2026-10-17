@@ -3,7 +3,6 @@
  * 42x42px with gold fill arc and percentage number in center.
  */
 
-import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 import { colors } from '../theme/colors';

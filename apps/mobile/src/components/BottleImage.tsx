@@ -1,5 +1,5 @@
 /** Bottle image with a brand-initial fallback (image_url used to be ignored everywhere). */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { colors } from '../theme/colors';
 

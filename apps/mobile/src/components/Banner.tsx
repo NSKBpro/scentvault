@@ -1,5 +1,4 @@
 /** Inline status banner: offline, pending sync, errors. */
-import React from 'react';
 import { Pressable, StyleSheet, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../theme/colors';

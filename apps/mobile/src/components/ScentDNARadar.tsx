@@ -5,7 +5,6 @@
  * Uses react-native-svg for rendering.
  */
 
-import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Svg, { Polygon, Line, Circle, Text as SvgText } from 'react-native-svg';
 import { colors } from '../theme/colors';

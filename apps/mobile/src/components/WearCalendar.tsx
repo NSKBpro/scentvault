@@ -1,5 +1,5 @@
 /** Month calendar with one coloured dot per fragrance worn that day. */
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import type { WearOut } from '@api-types';

@@ -3,7 +3,6 @@
  * Shows name, brand, and similarity percentage ring.
  */
 
-import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 import { colors } from '../theme/colors';

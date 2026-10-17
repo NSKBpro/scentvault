@@ -6,7 +6,6 @@
  * Base notes: deep amber (#8B6F3A)
  */
 
-import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { colors } from '../theme/colors';
 import { spacing, radius } from '../theme/spacing';

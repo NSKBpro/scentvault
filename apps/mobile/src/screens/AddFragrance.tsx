@@ -2,7 +2,7 @@
  * Add to collection: search the catalog → fill in the bottle → save (works offline too).
  * Opened with `route.params.fragrance` it skips straight to the details step.
  */
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   FlatList, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View,
 } from 'react-native';

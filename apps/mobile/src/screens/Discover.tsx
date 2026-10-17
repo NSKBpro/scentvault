@@ -4,7 +4,7 @@
  * Results appear as soon as the vector search returns (well under a second);
  * the advisor's explanation is fetched afterwards and fades in when ready.
  */
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

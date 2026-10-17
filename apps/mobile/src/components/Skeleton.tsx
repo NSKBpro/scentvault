@@ -1,5 +1,5 @@
 /** Pulsing placeholders shown while data loads (instead of full-screen spinners). */
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Animated, StyleSheet, View, type ViewStyle } from 'react-native';
 import { colors } from '../theme/colors';
 import { radius, spacing } from '../theme/spacing';

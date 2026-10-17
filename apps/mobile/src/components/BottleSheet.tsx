@@ -1,7 +1,7 @@
 /**
  * "Your bottle" editor: every field of a collection item, plus finish / sell / remove.
  */
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Alert,
   KeyboardAvoidingView,

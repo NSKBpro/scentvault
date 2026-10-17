@@ -2,7 +2,7 @@
  * Price history per bottle size (sizes are never mixed): sparkline + latest / low / high / reference.
  * Data: public GET /fragrances/{id}/price-history.
  */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Svg, { Circle, Polyline } from 'react-native-svg';
 import type { PriceSeries } from '@api-types';
